@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_top"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/home_top_background"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Today:"
+            android:textColor="#DAFFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_time_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="12:23:24"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tv_today"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="1dp"
+            android:layout_height="206dp"
+            android:layout_marginStart="146dp"
+            android:background="#8FFFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_top_projects"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/line"
+
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_background_shape"
+        android:layout_width="14dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/background_shape"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_top" />
+
+    <TextView
+        android:id="@+id/tv_nsp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="NSP"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_background_shape"
+        app:layout_constraintLeft_toRightOf="@id/iv_background_shape"
+        app:layout_constraintTop_toTopOf="@id/iv_background_shape" />
+
+    <ImageButton
+        android:id="@+id/iv_drop_down"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="9dp"
+        android:background="@drawable/ic_baseline_keyboard_arrow_down_24"
+
+        app:layout_constraintBottom_toBottomOf="@id/tv_nsp"
+        app:layout_constraintLeft_toRightOf="@id/tv_nsp"
+        app:layout_constraintTop_toTopOf="@id/tv_nsp" />
+
+    <TextView
+        android:id="@+id/tv_add_project"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="Add Project"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_drop_down"
+        app:layout_constraintLeft_toRightOf="@id/iv_drop_down"
+        app:layout_constraintTop_toTopOf="@id/iv_drop_down" />
+
+    <ImageButton
+        android:id="@+id/ib_add_project"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="9dp"
+        android:background="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="@id/tv_add_project"
+        app:layout_constraintLeft_toRightOf="@id/tv_add_project"
+        app:layout_constraintTop_toTopOf="@id/tv_add_project" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_running_projects"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp"
+        android:layoutAnimation="@anim/recyclerview_item_animation"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/btn_add"
+        app:layout_constraintTop_toBottomOf="@id/tv_nsp"
+
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="#103052"
+        android:padding="15dp"
+        android:paddingBottom="10dp"
+        android:text="Add category"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

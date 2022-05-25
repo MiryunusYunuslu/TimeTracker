@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="2dp"
+
+    >
+
+    <ImageView
+        android:id="@+id/iv_background_project_shape"
+        android:layout_width="14dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/background_shape"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_project_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="NSP"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_background_project_shape"
+        app:layout_constraintLeft_toRightOf="@id/iv_background_project_shape"
+        app:layout_constraintTop_toTopOf="@id/iv_background_project_shape" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_project_name"
+        app:layout_constraintRight_toLeftOf="@id/iv_project_background_white"
+        app:layout_constraintTop_toTopOf="@id/tv_project_name" />
+
+    <ImageView
+        android:id="@+id/iv_project_background_white"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/tv_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_time" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
