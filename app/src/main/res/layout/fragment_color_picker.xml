@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.ColorPickerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <com.skydoves.colorpickerview.ColorPickerView
 
-</FrameLayout>
+        android:id="@+id/colorPickerView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        app:actionMode="last"
+        app:initialColor="#CF2020"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.skydoves.colorpickerview.sliders.BrightnessSlideBar
+        android:id="@+id/alphaSlideBar"
+        android:layout_width="280dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="30dp"
+        app:borderColor_BrightnessSlider="#605555"
+        app:borderSize_BrightnessSlider="5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/colorPickerView"
+        app:selector_BrightnessSlider="@drawable/wheel" />
+
+    <TextView
+        android:id="@+id/tv_color_hashcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/font_sfpro"
+        android:gravity="center"
+        android:text="dasd"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/alphaSlideBar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="26dp"
+        android:backgroundTint="#103052"
+        android:padding="15dp"
+        android:paddingBottom="10dp"
+        android:text="Select"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_color_hashcode" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,7 +58,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun setClickListeners() = with(binding) {
-
         ivDropDown.setOnClickListener {
             if (!runningProjectShowing) {
                 binding.ivDropDown.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_up_24)

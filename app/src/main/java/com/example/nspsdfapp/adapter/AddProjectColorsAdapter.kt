@@ -7,9 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nspsdfapp.databinding.ItemAddColorsListBinding
+import com.example.nspsdfapp.ui.fragment.AddFragmentView
 import com.example.nspsdfapp.utils.Constants.SELECTED_COLOR
 
-class AddProjectColorsAdapter(private val colorsList: List<String>) :
+class AddProjectColorsAdapter(
+    private val colorsList: List<String>,
+    val addFragmentView: AddFragmentView
+) :
     RecyclerView.Adapter<AddProjectColorsAdapter.ViewHolder>() {
     private var selectedKey = 0
 
@@ -17,8 +21,6 @@ class AddProjectColorsAdapter(private val colorsList: List<String>) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("ResourceType")
         fun bind(color: String) = with(binding) {
-            SELECTED_COLOR = color
-
             ibColor.setBackgroundColor(Color.parseColor(color))
         }
 
@@ -41,15 +43,16 @@ class AddProjectColorsAdapter(private val colorsList: List<String>) :
     override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.bind(colorsList[position])
         if (position == selectedKey) {
+            SELECTED_COLOR = colorsList[position]
             holder.makeSelectedVisible(colorsList[position])
         } else {
             holder.binding.cardViewSelected.visibility = View.INVISIBLE
         }
         holder.binding.ibColor.setOnClickListener {
+            SELECTED_COLOR = colorsList[position]
             selectedKey = position
-
+            addFragmentView.showColorOnProject(colorsList[position])
             notifyDataSetChanged()
-
         }
 
     }

@@ -1,7 +1,7 @@
 package com.example.nspsdfapp.utils
 
 object Constants {
-    val ADD_COLOR_LIST = listOf(
+    var ADD_COLOR_LIST = arrayListOf(
         "#7B61FF",
         "#850DBE",
         "#AF026A",
@@ -17,4 +17,5 @@ object Constants {
     )
     var SELECTED_COLOR = ""
     var SELECTED_PROJECT_NAME = ""
+    var SELECTED_COLOR_FROM_PICKER = ""
 }

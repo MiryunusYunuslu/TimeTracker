@@ -1,5 +1,6 @@
 package com.example.nspsdfapp.ui.fragment
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,20 +15,29 @@ import com.example.nspsdfapp.databinding.FragmentAddBinding
 import com.example.nspsdfapp.model.ProjectModel
 import com.example.nspsdfapp.utils.Constants
 import com.example.nspsdfapp.utils.Constants.SELECTED_COLOR
+import com.example.nspsdfapp.utils.Constants.SELECTED_COLOR_FROM_PICKER
 import com.example.nspsdfapp.utils.Constants.SELECTED_PROJECT_NAME
 import com.example.nspsdfapp.utils.Data
 
 
-class AddFragment : Fragment() {
+class AddFragment : Fragment(), AddFragmentView {
     lateinit var binding: FragmentAddBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentAddBinding.inflate(layoutInflater)
+        checkColorPicker()
         setUpRecyclerView()
         setUpClickListeners()
         return binding.root
+    }
+
+    private fun checkColorPicker() {
+        if (SELECTED_COLOR_FROM_PICKER != "") {
+            Constants.ADD_COLOR_LIST[0] = SELECTED_COLOR_FROM_PICKER
+            binding.ivBackgroundProjectShape.setBackgroundColor(Color.parseColor(SELECTED_COLOR_FROM_PICKER))
+        }
     }
 
     private fun setUpClickListeners() = with(binding) {
@@ -62,8 +72,12 @@ class AddFragment : Fragment() {
 
     private fun setUpRecyclerView() = with(binding) {
         rvColors.layoutManager = GridLayoutManager(requireContext(), 4)
-        val adapter = AddProjectColorsAdapter(Constants.ADD_COLOR_LIST)
+        val adapter = AddProjectColorsAdapter(Constants.ADD_COLOR_LIST, this@AddFragment)
         rvColors.adapter = adapter
+    }
+
+    override fun showColorOnProject(color: String) = with(binding) {
+        ivBackgroundProjectShape.setBackgroundColor(Color.parseColor(color))
     }
 
 
