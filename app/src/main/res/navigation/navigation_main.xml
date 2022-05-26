@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_addFragment"
             app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
@@ -28,4 +31,18 @@
         android:name="com.example.nspsdfapp.ui.fragment.ColorPickerFragment"
         android:label="fragment_color_picker"
         tools:layout="@layout/fragment_color_picker" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.nspsdfapp.ui.fragment.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_allStatisticsFragment"
+            app:destination="@id/allStatisticsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allStatisticsFragment"
+        android:name="com.example.nspsdfapp.ui.fragment.AllStatisticsFragment"
+        android:label="fragment_all_statistics"
+        tools:layout="@layout/fragment_all_statistics" />
 </navigation>

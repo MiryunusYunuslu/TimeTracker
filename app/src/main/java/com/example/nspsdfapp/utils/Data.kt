@@ -6,7 +6,7 @@ object Data {
     private var projects = arrayListOf<ProjectModel>(
         ProjectModel("#02AFA5", "PayPark", Pair("12", "40"), false),
         ProjectModel("#DD8470", "Courier", Pair("34", "50"), false),
-        ProjectModel("#1B7534", "Courier", Pair("31", "23"), false)
+        ProjectModel("#1B7534", "Courier", Pair("34", "23"), false)
     )
 
     fun getProjects() = projects

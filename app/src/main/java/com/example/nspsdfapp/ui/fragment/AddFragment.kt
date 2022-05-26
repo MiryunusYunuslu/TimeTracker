@@ -36,7 +36,11 @@ class AddFragment : Fragment(), AddFragmentView {
     private fun checkColorPicker() {
         if (SELECTED_COLOR_FROM_PICKER != "") {
             Constants.ADD_COLOR_LIST[0] = SELECTED_COLOR_FROM_PICKER
-            binding.ivBackgroundProjectShape.setBackgroundColor(Color.parseColor(SELECTED_COLOR_FROM_PICKER))
+            binding.ivBackgroundProjectShape.setBackgroundColor(
+                Color.parseColor(
+                    SELECTED_COLOR_FROM_PICKER
+                )
+            )
         }
     }
 

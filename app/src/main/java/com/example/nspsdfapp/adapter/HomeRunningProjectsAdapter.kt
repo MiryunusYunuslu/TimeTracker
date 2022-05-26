@@ -13,9 +13,6 @@ import com.example.nspsdfapp.model.ProjectModel
 class HomeRunningProjectsAdapter :
     RecyclerView.Adapter<HomeRunningProjectsAdapter.ViewHolder>() {
     var projects = mutableListOf<ProjectModel>()
-    //var isChronometerRunning = false
-    // lateinit var projectModel: ProjectModel
-
     inner class ViewHolder(private val binding: ItemHomeRunningProjectsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("ResourceType")
@@ -36,7 +33,8 @@ class HomeRunningProjectsAdapter :
                 } else {
                     ivProjectStart.setBackgroundResource(R.color.white)
 
-                    chronometerProjectRunningTime.base = SystemClock.elapsedRealtime() - (projectModel.projectTime.first.toLong() * 60000 + projectModel.projectTime.second.toLong() * 1000)
+                    chronometerProjectRunningTime.base =
+                        SystemClock.elapsedRealtime() - (projectModel.projectTime.first.toLong() * 60000 + projectModel.projectTime.second.toLong() * 1000)
                     chronometerProjectRunningTime.start()
                     projectModel.projectRunning = true
                 }

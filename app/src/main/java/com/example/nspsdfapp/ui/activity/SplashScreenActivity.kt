@@ -25,7 +25,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun checkUser() {
-        object : CountDownTimer(1500, 1000) {
+        object : CountDownTimer(1500, 700) {
             override fun onTick(p0: Long) {
             }
 

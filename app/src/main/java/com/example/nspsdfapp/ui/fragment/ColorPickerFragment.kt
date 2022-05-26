@@ -40,7 +40,7 @@ class ColorPickerFragment : Fragment() {
         colorPickerView.attachBrightnessSlider(alphaSlideBar)
         colorPickerView.setColorListener(ColorEnvelopeListener { color, fromUser ->
             tvColorHashcode.apply {
-                setText("#" + color.hexCode.toString())
+                text = "#" + color.hexCode.toString()
                 setTextColor(color.color)
             }
             SELECTED_COLOR_FROM_PICKER = "#" + color.hexCode

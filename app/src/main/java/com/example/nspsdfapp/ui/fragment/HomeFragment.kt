@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initAdapters() {
-        homeAdapter = HomeMainProjectAdapter()
+        homeAdapter = HomeMainProjectAdapter("home")
         homeRunningProjectsAdapter = HomeRunningProjectsAdapter()
     }
 
@@ -78,6 +78,12 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_addFragment)
         }
         btnAdd.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_addFragment)
+        }
+        tvLookHistory.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_historyFragment)
+        }
+        ibAddProject.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_addFragment)
         }
 

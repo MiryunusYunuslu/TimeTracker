@@ -37,6 +37,20 @@
             app:layout_constraintLeft_toRightOf="@id/tv_today"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tv_look_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/font_sfpro"
+            android:text="Look at history"
+            android:textColor="#EDFFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/tv_today"
+            app:layout_constraintRight_toRightOf="@id/tv_time_today"
+            app:layout_constraintTop_toBottomOf="@id/tv_time_today" />
+
         <View
             android:id="@+id/line"
             android:layout_width="1dp"
@@ -50,7 +64,6 @@
             android:id="@+id/rv_top_projects"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"

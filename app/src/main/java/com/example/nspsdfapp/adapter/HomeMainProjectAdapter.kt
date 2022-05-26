@@ -3,12 +3,14 @@ package com.example.nspsdfapp.adapter
 import android.annotation.SuppressLint
 import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nspsdfapp.databinding.ItemHomeProjectsListBinding
 import com.example.nspsdfapp.model.ProjectModel
 
-class HomeMainProjectAdapter :
+
+class HomeMainProjectAdapter(val type: String) :
     RecyclerView.Adapter<HomeMainProjectAdapter.ViewHolder>() {
 
     var projectsList = mutableListOf<ProjectModel>()
@@ -24,6 +26,15 @@ class HomeMainProjectAdapter :
 
         }
 
+        fun setTextsColor(color: Int) = with(binding) {
+            tvProjectName.setTextColor(color)
+            tvTime.setTextColor(color)
+        }
+
+        fun hideBackgroundShape() = with(binding) {
+            ivProjectBackgroundWhite.visibility = View.GONE
+        }
+
 
     }
 
@@ -34,8 +45,17 @@ class HomeMainProjectAdapter :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        println("working")
         holder.bind(projectsList[position])
+        var color = 1
+        when (type) {
+            "home" -> color = Color.WHITE
+            "history" -> {
+                color = Color.BLACK
+                holder.hideBackgroundShape()
+            }
+        }
+        holder.setTextsColor(color)
+
 
     }
 

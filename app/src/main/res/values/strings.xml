@@ -2,4 +2,10 @@
     <string name="app_name">NspSdfApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all_statistics">All Statistics</string>
+    <string name="today">Today</string>
+    <string-array name="spinner_categories">
+        <item>Categories</item>
+        <item>Projects</item>
+    </string-array>
 </resources>
